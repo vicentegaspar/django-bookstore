@@ -1,9 +1,8 @@
 import factory
-
 from django.contrib.auth.models import User
-from product.factories import ProductFactory
 
 from order.models import Order
+from product.factories import ProductFactory
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -11,7 +10,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = factory.Faker("pystr")
 
     class Meta:
-        user = User
+        model = User
 
 
 class OrderFactory(factory.django.DjangoModelFactory):
@@ -21,6 +20,7 @@ class OrderFactory(factory.django.DjangoModelFactory):
     def product(self, create, extracted, **kwargs):
         if not create:
             return
+
         if extracted:
             for product in extracted:
                 self.product.add(product)
