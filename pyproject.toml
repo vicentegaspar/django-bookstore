@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Django bookstore API"
 authors = ["Kodashin <kodashin2@gmail.com>"]
 readme = "README.md"
-packages = [{include = "django_bookstore"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
