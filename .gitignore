@@ -130,3 +130,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#pychache
+__pycache__
+*.pyc
+db.sqlite3
